@@ -1,58 +1,28 @@
 #include "holberton.h"
-#include <unistd.h>
-#include <stdarg.h>
-#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * _printf - The function compares the input stream @format against @specs
- * and executes the matched function type.
+ * struct types - holds the argument type
+ * and pointer to function with argument
+ * type (our list of parameters).
  *
- * @format: the input stream
+ * @type: ptr to the char identifier
  *
- * @specs: array of structs
- *
- * Return - Specifier ex: printf("Specifier")
+ * @f: pointer to function of params
+ * in the ellipse.
  */
 
 int _printf(const char *format, ...)
 {
-        int idx, specs_id, count;
-        va_list args;
-        pt_t specs[] = {
-                {"c", print_char},
-                {"s", print_str},
-                {"%", print_perc},
-                {'\0', NULL}
-        };
+	int i;
+	va_list params;
+	
+	type_s controller[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'d', print_decimal},
+		{NULL, NULL}
+	};
 
-        va_start(args, format);
-
-        if (format == NULL)
-                return (-1);
-
-        for (idx = 0; format [idx] != '\0'; idx++)
-        {
-                if (format[idx] == '%')
-                {
-                        idx ++;
-                        specs_id = 0;
-                        while (specs[specs_id].pt != NULL)
-                        {
-                                if(*(specs[specs_id].pt) == format[idx])
-                                        count += specs[specs_id].f(args);
-                                specs_id++;
-                        }
-                        if (format[idx] == ' ' || format[idx] ==  '\0')
-                        {
-                                return (-1);
-                        }
-                }
-                if (format[idx] != '%' && format [idx] != '\0')
-                {
-                        count += _putchar(format[idx]);
-                }
-        }
-        va_end(args);
-
-        return(count);
-}
+	va_start(params, format);

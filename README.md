@@ -1,2 +1,5 @@
-# printf
-Building the glibc printf() function from scratch that handles char, int, string, and decimal (for now)
+## printf()
+Prints text to terminal according to a specified format (format being the parameter stream). :arrows_counterclockwise: :wrench: for printf().
+
+## Syntax
+printf(<SPECIFIER>, <PARAMETER STREAM>...);
