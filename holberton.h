@@ -1,28 +1,21 @@
-#ifndef _HOLBERTON_H
+#ifndef _HOLBERTON_H_
 #define _HOLBERTON_H_
 #include <stdarg.h>
-
 /**
- * struct types - holds the argument type
- * and pointer to function with argument
- * type (our list of parameters).
- *
- * @type: ptr to the char identifier
- *
- * @f: pointer to function of params
- * in the ellipse.
+ * struct pt - Structure to printf function
+ * @pt: print type
+ * @f: function
  */
-
-typedef struct types
+typedef struct pt
 {
-	char *type;
-	int (*f)(va_list params);
-} type_s;
-
-int print_char(va_list);
-int print_string(va_list);
-int print_decimal(va_list);
-int print_1char(const char *);
+        char *pt;
+        int (*f)(va_list);
+} pt_t;
 int _printf(const char *format, ...);
-
+int _putchar(char c);
+int print_char(va_list args);
+int print_str(va_list args);
+int print_perc(va_list args);
+int print_decimal(va_list args);
+int print_1char(const char *);
 #endif
