@@ -2,7 +2,16 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <unistd.h>
+
 /**
+ * _printf - The function compares the input stream @format against @specs
+ * and executes the matched function type.
+ *
+ * @format: the input stream
+ *
+ * @specs: array of structs
+ *
+ * Return - Specifier ex: printf("Specifier")
  */
 
 int _printf(const char *format, ...)
@@ -30,7 +39,7 @@ int _printf(const char *format, ...)
                         while (specs[specs_id].pt != NULL)
                         {
                                 if(*(specs[specs_id].pt) == format[idx])
-                                        count = count + specs[specs_id].f(args);
+                                        count += specs[specs_id].f(args);
                                 specs_id++;
                         }
                         if (format[idx] == ' ' || format[idx] ==  '\0')
@@ -40,7 +49,7 @@ int _printf(const char *format, ...)
                 }
                 if (format[idx] != '%' && format [idx] != '\0')
                 {
-                        count = count + _putchar(format[idx]);
+                        count += _putchar(format[idx]);
                 }
         }
         va_end(args);
