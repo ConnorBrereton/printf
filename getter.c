@@ -21,11 +21,11 @@
 int getter(const char *format, va_list params, int j)
 {
 	type_s controller[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"d", print_number},
-		{"i", print_number},
-		{"\0", NULL}
+		{'c', print_char},
+		{'s', print_string},
+		{'d', print_number},
+		{'i', print_number},
+		{'\0', NULL}
 	};
 	int i, len;
 
