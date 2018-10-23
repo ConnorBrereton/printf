@@ -15,17 +15,14 @@
 
 typedef struct types
 {
-	char *type;
-	int (*f)(va_list params);
+	char type;
+	int (*f)(va_list);
 } type_s;
 
-int print_char(va_list);
-int print_string(va_list);
-int print_numbers(va_list params);
-int print_recursive(unsigned int n);
-int _intlen(int n);
+int print_char(va_list params);
+int print_string(va_list params);
+int print_number(va_list params);
 int _printf(const char *format, ...);
-int _strlen(char *s);
 int _putchar(char c);
 int getter(const char *format, va_list params, int i);
 
