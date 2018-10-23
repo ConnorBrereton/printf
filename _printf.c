@@ -28,8 +28,11 @@ int _printf(const char *format, ...)
 	va_list args;
 	pt_t specs[] = {
 		{"c", print_char},
-		{"s", print_str},
+		{"s", print_string},
 		{"%", print_perc},
+		{"d", print_numbers},
+		{"i", print_numbers},
+		{"r", print_rev},
 		{'\0', NULL}
 	};
 
@@ -58,7 +61,7 @@ int _printf(const char *format, ...)
 		if (format[idx] != '%' && format [idx] != '\0')
 		{
 		       count += _putchar(format[idx]);
-		       count+=2;
+
 		}
 	}
 	va_end(args);
