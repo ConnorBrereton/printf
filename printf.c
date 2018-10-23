@@ -5,7 +5,11 @@
  */
 int print_char(va_list args)
 {
-	return (_putchar(va_arg(args, int)));
+	char c = va_arg(args, int);
+
+	write(1, &c, 1);
+
+	return (0);
 }
 
 int print_perc(va_list args)
@@ -15,7 +19,7 @@ int print_perc(va_list args)
 	return(0);
 }
 
-int print_str(va_list args)
+int print_string(va_list args)
 {
 	char *str = va_arg(args, char*);
 
@@ -31,4 +35,5 @@ int print_str(va_list args)
 		str = "(null)";
 	}
 	return (i);
+
 }
