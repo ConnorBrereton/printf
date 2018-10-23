@@ -4,47 +4,50 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-int _putchar (char c);
-
 /**
- * getter - matches parameter stream
+ * getter - matches stream format
  * to array of structs containing
- * the functions type.
+ * the formatter type.
  *
- * @format: ptr to input stream
+ * @format: pointer to input stream
+ *
  * @params: name given to stream
- * @i: index for input stream
  *
- * Return - size of input stream
+ * @j: index for input stream
+ *
+ * Return: (len) size of input stream
  */
 
-int getter(const char *format, va_list params, int i)
+int getter(const char *format, va_list params, int j)
 {
-	int j = 0, len = 0;
-
 	type_s controller[] = {
-		{ "c", print_char },
-		{ "s", print_string },
-		{ "d", print_numbers },
-		{ "i", print_numbers },
-		{NULL, NULL}
+		{"c", print_char},
+		{"s", print_string},
+		{"d", print_number},
+		{"i", print_number},
+		{"\0", NULL}
 	};
+	int i, len;
 
-	while (controller[j].type)
+	i = len = 0;
+
+	/* find valid formatter and adds to len */
+	while (controller[i].type)
 	{
-		if (format[i] == *controller[j].type)
+		if (format[j] == controller[i].type)
 		{
-			len += controller[j].f(params);
+			len = len + (controller[i].f(params));
 			break;
 		}
 		i++;
 	}
 
-	if (controller[j].type == NULL)
+	/* handles end of stream */
+	if (controller[i].type == '\0')
 	{
-		_putchar(format[i - 1]);
-		_putchar(format[i]);
-		len += 2;
+		_putchar(format[j--]);
+		_putchar(format[j]);
+		len = len + 2;
 	}
 	return (len);
 }
