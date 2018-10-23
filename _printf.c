@@ -5,16 +5,19 @@
 #include <stdarg.h>
 
 /**
-  * _printf - handles formatter 
-  * and specifier iteration
+  * _printf - custom printf()
+  * function
   *
-  * @format: va_list declaration
+  * @format: ptr to input stream
+  *
   * Return: len (success) 1 (fail)
   */
 
 int _printf(const char *format, ...)
 {
-	int i = 0, len = 0;
+	int i, len;
+
+	i = len = 0;
 
 	va_list params;
 
@@ -23,34 +26,32 @@ int _printf(const char *format, ...)
 
 	va_start(params, format);
 
-	while (format[i] != '\0')
+	while (format && format[i])
 	{
-		/* case 1: formatter without specifier */
-		if (format[i] == '%' && (format[i + 1] == ' ' || format[i + 1] == '\0'))
-			return (1);
-
-		/* case 2: double formatter */
-		else if (format[i] == '%' && format[i + 1] == '%')
+		if (format[i] == '%' && format[i + 1] == '%')
 		{
 			_putchar('%');
 			len++;
 			i++;
 		}
 
-		/* case 3: formatter with valid specifier */
-		else if (format[i] == '%' && format[i + 1] != '\0' && format[i + 1] != '%')
+		else if (format[i] == '%' && format[i + 1] != '%'
+			&& format[i + 1] != '\0')
 		{
-			len += getter(format, params, i);
 			i++;
+			len += getter(format, params, i);
 		}
-
-		/* case 4: memory only has formatter */
+		/* expected case */
+		else if (format[i] == '%' && (format[i + 1] == '\0'
+			|| format[i + 1] == ' '))
+			return (1);
+		/* edge case */
 		else
 		{
 			_putchar(format[i]);
 			len++;
 		}
+		i++;
 	}
-	/* len = number of characters */
 	return (len);
 }
