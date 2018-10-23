@@ -1,12 +1,13 @@
 #include "holberton.h"
 #include <unistd.h>
 
-/** _putchar - writes chacacter(s)
+/**
+ * _putchar - writes chacacter(s)
  * to stdout one char at a time
  *
  * @c: current char
  *
- * Return - (1) success (-1) failure
+ * Return: (1) success (-1) failure
  */
 
 int _putchar(char c)
