@@ -1,6 +1,14 @@
 #include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
+
+int print_char(va_list params);
+int print_string(va_list params);
+int print_numbers(va_list params);
+int _putchar(char c);
+int _intlen(int n);
 
 /**
  * print_char - prints out the
@@ -14,26 +22,11 @@
 int print_char(va_list params)
 {
 	/* buffer contains character and \0 */
-	char *buffer[1];
+	char buffer;
 
-	buffer[0] = va_arg(params, int);
-
-	write(1, buffer, sizeof(char));
-
+	buffer = va_arg(params, int);
+	_putchar(buffer);
 	return (0);
-}
-
-/**
- * print_1char - prints one char
- *
- * @s: points to the first char
- *
- * Return: 0 (success)
- */
-
-int print_1char(const char *s)
-{
-	write(1, s, sizeof(char));
 }
 
 /**
@@ -46,57 +39,85 @@ int print_1char(const char *s)
 
 int print_string(va_list params)
 {
-	int i, len = 0, buffer_len = 0, count = 0;
+	int i;
 	char *buffer;
-	char null[5] = "NULL";
 
 	buffer = va_arg(params, char *);
-	buffer_len = _intlen(buffer);
-	count = sizeof(char) * buffer_len;
 
-	if (!buffer)
+	if (buffer == NULL)
 	{
-		buffer = malloc(sizeof(char) * 5);
-
-		if (buffer == NULL)
-		{
-			free(buffer);
-			return (1);
-		}
-
-		while (null[i] != '\0')
-		{
-			*(buffer + i) = null[i];
-			i++;
-		}
+		buffer = "(null)";
+		return (1);
 	}
 
-	write(1, buffer, count);
-	return (buffer_len);
+	for (i = 0; buffer[i] != '\0'; buffer++)
+	{
+		_putchar(buffer[i]);
+	}
+	return (i);
 }
 
 /**
- * print_decimal - prints decimal stream
+ * print_numbers - prints decimal stream
+ *
+ * Return: buffer_len (success) 1 (failure)
+ */
+
+int print_numbers(va_list params)
+{
+	unsigned int i;
+	int n;
+
+	n = va_arg(params, int);
+
+	if (n < 0)
+	{
+		_putchar('-');
+		i = -n;
+	}
+	else
+	{
+		i = n;
+	}
+	print_recursive(i);
+	return (_intlen(i));
+}
+
+/**
+ * print_recursive - prints decimal stream
  *
  * @params: input stream
  *
  * Return: buffer_len (success) 1 (failure)
  */
 
-int print_decimal(va_list params)
+int print_recursive(unsigned int n)
 {
-	int buffer_len = 0, count = 0;
-	int stream;
-	char *buffer;
+	if (n / 10 != 0)
+	{
+		print_recursive(n / 10);
+	}
+	_putchar((n % 10) + '0');
 
-	stream = va_arg(params, int);
+	return (1);
+}
 
-	if (stream < 0)
-		return (1);
+/**
+ * _intlen - calculates length of integer
+ *
+ * @n: number from stream
+ *
+ * Return: len (success)
+ */
 
-	buffer_len = _intlen(stream);
-	buffer = stream;
-	count = sizeof(int) * buffer_len;
+int _intlen(int n)
+{
+	int len = 0;
 
-	write(1, buffer, count);
+	if (n < 10)
+	{
+		len = 1;
+		return (len);
+	}
+	return (1 + _intlen(n / 10));
 }
