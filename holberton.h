@@ -16,6 +16,12 @@ typedef struct pt
 int _printf(const char *format, ...);
 int _putchar(char c);
 int print_char(va_list args);
-int print_str(va_list args);
+int print_string(va_list args);
 int print_perc(va_list args);
+int print_rev(va_list args);
+int _strlen(char *s);
+int _intlen(int n);
+int print_numbers(va_list args);
+int print_recursive(unsigned int n);
+int print_rot13(va_list args);
 #endif
