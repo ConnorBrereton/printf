@@ -1,4 +1,4 @@
-#ifndef _HOLBERTON_H
+#ifndef _HOLBERTON_H_
 #define _HOLBERTON_H_
 #include <stdarg.h>
 
@@ -21,10 +21,12 @@ typedef struct types
 
 int print_char(va_list);
 int print_string(va_list);
-int print_decimal(va_list);
-int print_1char(const char *);
+int print_numbers(va_list params);
+int print_recursive(unsigned int n);
+int _intlen(int n);
 int _printf(const char *format, ...);
 int _strlen(char *s);
-int _intlen(int n);
+int _putchar(char c);
+int getter(const char *format, va_list params, int i);
 
 #endif
