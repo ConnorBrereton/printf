@@ -1,5 +1,7 @@
-## printf()
-Prints text to terminal according to a specified format (format being the parameter stream). :arrows_counterclockwise: :wrench: for printf().
+## :arrows_counterclockwise: :wrench: printf()
+![Holberton School Logo]
+(https://imgur.com/a/AgzL2RT)
+
 
 ## Syntax
 printf(formatter, stream...);
