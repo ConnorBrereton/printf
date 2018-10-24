@@ -15,11 +15,11 @@
 
 int _printf(const char *format, ...)
 {
-	int i, len;
-
-	i = len = 0;
-
 	va_list params;
+	
+	int i = 0;
+
+	int len = 0;
 
 	if (format == NULL)
 		return (1);
