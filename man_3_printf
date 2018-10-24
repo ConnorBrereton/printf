@@ -1,0 +1,28 @@
+.TH _printf man 3 "23 October 2018" "Printf Project 1.0" "_printf man page"
+.SH NAME
+.B _printf
+.SH SYNOPSIS
+.B printf FORMAT [ARGUMENT]...
+.SH DESCRIPTION
+.B _printf
+It is a function that prints ARGUMENT(s) according to FORMAT
+FORMAT characters:
+.IP c
+Prints a single character
+.IP s
+Prints a string of characters
+.IP %
+Prints the percent sign.
+.IP d, i
+Prints numbers. “%d” prints a decimal number, and “%i” prints an integer in base 10
+.SH EXAMPLE
+printf                produces
+(“%c”, H)            H
+(“%s”, “Hello!”)     Hello!
+(“%d”, 7)            7
+.SH SEE ALSO
+.I man 3 printf
+.SH BUGS
+No known bugs.
+.SH AUTHOR(S)
+Connor Brereton, Carlos Chan
