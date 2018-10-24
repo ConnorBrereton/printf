@@ -16,12 +16,25 @@ Prints the percent sign.
 .IP d, i
 Prints numbers. “%d” prints a decimal number, and “%i” prints an integer in base 10
 .SH EXAMPLE
-printf                produces
-(“%c”, H)            H
-(“%s”, “Hello!”)     Hello!
-(“%d”, 7)            7
+Printing a string:
+    #include "holberton.h"
+
+	_printf("%s\n","I'm a string");
+
+Printing a single character:
+
+	#include "holberton.h"
+
+		_printf("%c\n", 'H');
+
+Printing numbers:
+
+	#"holberton.h"
+
+		_printf("%d\n", 456789);
+
 .SH SEE ALSO
-.I man 3 printf
+man 3 printf
 .SH BUGS
 No known bugs.
 .SH AUTHOR(S)
