@@ -16,7 +16,7 @@
 int _printf(const char *format, ...)
 {
 	va_list params;
-	
+
 	int i = 0;
 
 	int len = 0;
