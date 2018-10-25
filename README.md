@@ -3,14 +3,14 @@
 _printf() is a rebuild of the GNU print() out of the standard C library. This build is ISO compliant due to compilation from the C90 compiler. 
 
 
-## Getting Started
+## :running: Getting Started
 
 * [Ubuntu 14.04 LTS](http://releases.ubuntu.com/14.04/) - Operating system reqd.
 
 * [GCC 4.8.4](https://gcc.gnu.org/gcc-4.8/) - Compiler used
 
 
-### Prerequisites
+## :warning: Prerequisites
 
 * Must have `git` installed
 
@@ -21,7 +21,7 @@ $ sudo apt-get install git
 ```
 
 
-### Installing
+## :arrow_down: Installing
 
 Clone the repository
 
@@ -35,7 +35,7 @@ Include in header file
 ```
 
 
-## Features
+## :bookmark_tabs: Features
 
 * %c : with the char argument, prints that char
 
@@ -49,7 +49,7 @@ Include in header file
 
 
 
-## Examples
+## :clipboard: Examples
 
 ```
 _printf("A char inside a sentence: %c. Did it work?\n", 'F');
@@ -82,7 +82,7 @@ output> Loading ... 99% Please wait
 
 
 
-### Coding Style Tests
+## :books: Coding Style Tests
 
 Strictly followed `Betty` style guide. To install
 
@@ -93,13 +93,13 @@ $ cd Betty; ./install.sh
 ```
 
 
-## Version
+## :pencil: Version
 
 * 0.1.0
 
 
 
-## Authors
+## :blue_book: Authors
 
 * **Connor Brereton** - [@ConnorBrereton](https://github.com/ConnorBrereton/printf)
 
@@ -107,13 +107,13 @@ $ cd Betty; ./install.sh
 
 
 
-## License
+## :mag: License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 
 
-## Acknowledgments
+## :mega: Acknowledgments
 
 * Carlos Chan
 * Holberton School
