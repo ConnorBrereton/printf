@@ -18,7 +18,7 @@ int print_char(va_list params)
 
 	c = va_arg(params, int);
 	_putchar(c);
-	return (1);
+	return (-1);
 }
 
 /**
@@ -105,11 +105,13 @@ int print_binary(va_list params)
 {
 	int i, len;
 	int *bin;
+	unsigned int p;
+	unsigned int stream;
 
 	len = 0;
 
-	unsigned int p = va_arg(params, unsigned int);
-	unsigned int stream = p;
+	p = va_arg(params, unsigned int);
+	stream = p;
 
 	while (p / 2 != 0)
 	{
@@ -148,11 +150,13 @@ int print_octal(va_list params)
 {
 	int i, len;
 	int *oct;
+	unsigned int p;
+	unsigned int stream;
 
 	len = 0;
 
-	unsigned int p = va_arg(params, unsigned int);
-	unsigned int stream = p;
+	p = va_arg(params, unsigned int);
+	stream = p;
 
 	while (p / 8 != 0)
 	{
@@ -172,7 +176,7 @@ int print_octal(va_list params)
 	}
 
 	for (i = len - 1; i >= 0; i++)
-		_putchar(bin[i] + '0');
+		_putchar(oct[i] + '0');
 
 	free(oct);
 	return (len);
