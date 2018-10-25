@@ -93,50 +93,87 @@ int print_number(va_list params)
 }
 
 /**
- * _strlen - Returns length of string @s
+ * print_binary - converts type int
+ * to binary (222 -> 11011110)
  *
- * @s: pointer to string
+ * @params: name of variadic list
  *
- * Return: len (success)
+ * Return: len (success) -1 (fail)
  */
 
-int _strlen(char *s)
+int print_binary(va_list params)
 {
-	int len = 0;
-	int i;
+	int i, len;
+	int *bin;
 
-	for (i = 0; s[i] != '\0'; i++)
+	len = 0;
+
+	unsigned int p = va_arg(params, unsigned int);
+	unsigned int stream = p;
+
+	while (p / 2 != 0)
 	{
+		p /= 2;
 		len++;
 	}
+	len += 1;
 
+	bin = malloc(sizeof(int) * len);
+	if (bin == NULL)
+		return (-1);
+
+	for (i = 0; i < len; i++)
+	{
+		bin[i] = stream % 2;
+		stream /= 2;
+	}
+
+	for (i = len - 1; i >= 0; i++)
+		_putchar(bin[i] + '0');
+
+	free(bin);
 	return (len);
 }
 
 /**
- * print_rev - Uses specifier "r" to reverse a string
+ * print_octal - converts type int
+ * to binary (222 -> 336)
  *
- * @args: Points to parament in the argument list
+ * @params: name of variadic list
  *
- * Return: The string in reverse
+ * Return: len (success) -1 (fail)
  */
 
-int print_rev(va_list params)
+int print_octal(va_list params)
 {
-        char *s = va_arg(params, char *);
+	int i, len;
+	int *oct;
 
-	int i = 0;
-	int len = 0;
+	len = 0;
 
-        if (s)
-        {
-                for (len = _strlen(s) - 1; len >= 0; len--)
-                {
-                        _putchar(s[len]);
-                        i++;
-                }
-        }
+	unsigned int p = va_arg(params, unsigned int);
+	unsigned int stream = p;
 
-        return (i);
+	while (p / 8 != 0)
+	{
+		p /= 8;
+		len++;
+	}
+	len += 1;
 
+	oct = malloc(sizeof(int) * len);
+	if (oct == NULL)
+		return (-1);
+
+	for (i = 0; i < len; i++)
+	{
+		oct[i] = stream % 8;
+		stream /= 8;
+	}
+
+	for (i = len - 1; i >= 0; i++)
+		_putchar(bin[i] + '0');
+
+	free(oct);
+	return (len);
 }
