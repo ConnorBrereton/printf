@@ -123,19 +123,16 @@ int _strlen(char *s)
 
 int print_rev(va_list params)
 {
-        int i, len;
+        char *s = va_arg(params, char *);
 
-	i = len = 0;
-
-	char *s;
-
-	s = va_arg(params, char *);
+	int i = 0;
+	int len = 0;
 
         if (s)
         {
                 for (len = _strlen(s) - 1; len >= 0; len--)
                 {
-                        _putchar(str[len]);
+                        _putchar(s[len]);
                         i++;
                 }
         }
