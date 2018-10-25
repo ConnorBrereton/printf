@@ -22,11 +22,11 @@ int _printf(const char *format, ...)
 	int len = 0;
 
 	if (format == NULL)
-		return (1);
+		return (-1);
 
 	va_start(params, format);
 
-	while (format && format[i])
+	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1] == '%')
 		{
@@ -41,11 +41,11 @@ int _printf(const char *format, ...)
 			i++;
 			len += getter(format, params, i);
 		}
-		/* expected case */
+
 		else if (format[i] == '%' && (format[i + 1] == '\0'
 			|| format[i + 1] == ' '))
-			return (1);
-		/* edge case */
+			return (-1);
+
 		else
 		{
 			_putchar(format[i]);
