@@ -1,10 +1,4 @@
-           _     _    __  ____  
-  _ __ _ _(_)_ _| |_ / _|/ /\ \ 
- | '_ \ '_| | ' \  _|  _| |  | |
- | .__/_| |_|_||_\__|_| | |  | |
- |_|                     \_\/_/ 
-
-## :arrows_counterclockwise: :wrench: printf()
+# :arrows_counterclockwise: :wrench: printf()
 
 _printf() is a rebuild of the GNU print() out of the standard C library. This build is ISO compliant due to compilation from the C90 compiler. 
 
