@@ -25,6 +25,7 @@ int getter(const char *format, va_list params, int j)
 		{'s', print_string},
 		{'d', print_number},
 		{'i', print_number},
+		{'%', print_char},
 		{'\0', NULL}
 	};
 	int i, len;
@@ -36,7 +37,7 @@ int getter(const char *format, va_list params, int j)
 	{
 		if (format[j] == controller[i].type)
 		{
-			len = len + (controller[i].f(params));
+			len += (controller[i].f(params));
 			break;
 		}
 		i++;
@@ -45,9 +46,9 @@ int getter(const char *format, va_list params, int j)
 	/* handles end of stream */
 	if (controller[i].type == '\0')
 	{
-		_putchar(format[j--]);
 		_putchar(format[j]);
-		len = len + 2;
+		_putchar(format[j--]);
+		len += 2;
 	}
 	return (len);
 }
