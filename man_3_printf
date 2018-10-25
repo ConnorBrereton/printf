@@ -39,6 +39,7 @@ Printing a string:
     #include "holberton.h"
 
         _printf("%s\n","I'm a string");
+
 		return (0);
 
 Output: I'm a string
@@ -48,7 +49,8 @@ Printing a single character:
         #include "holberton.h"
 
 		_printf("%c\n", 'H');
-			return (0);
+
+		return (0);
 
 Output: H
 Printing numbers:
@@ -56,7 +58,8 @@ Printing numbers:
         #"holberton.h"
 
                 _printf("%d\n", 456789);
-			return (0);
+
+		return (0);
 
 Output: 456789
 .SH SEE ALSO
