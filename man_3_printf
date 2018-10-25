@@ -1,27 +1,66 @@
-.TH _printf man 3 "23 October 2018" "Printf Project 1.0" "_printf man page"
+.TH _PRINTF 3 "24 October 2018" "Printf Project 1.0" "_printf man page"
 .SH NAME
 .B _printf
+Replicates the printf function - formatted output conversion.
 .SH SYNOPSIS
-.B printf FORMAT [ARGUMENT]...
+.B #include "holberton.h"
+
+int _printf(const char *format, ...)
 .SH DESCRIPTION
-.B _printf
-It is a function that prints ARGUMENT(s) according to FORMAT
-FORMAT characters:
+It is a function that prints ARGUMENT(s) according to FORMAT. The function printf() write output to the standard output stream (stdout).
+
+.B Format of string
+
+The string format is composed of ordinary characters, which copied whithout changes to the output stream.
+The conversion specification is the result of fetching arguments. So,
+
+_printf("%c", 'a');
+
+the conversition specifcation is initialized by the character % and end with a converstion specifier - in the example above is c,
+and returning a character (char) value of "a".
+
+.B Flag characters
 .IP c
 Prints a single character
 .IP s
 Prints a string of characters
 .IP %
 Prints the percent sign.
-.IP d, i
-Prints numbers. “%d” prints a decimal number, and “%i” prints an integer in base 10
+.IP d
+Prints a decimal number.
+.IP i
+Prints an integer in base ten.
+
+.SH RETURN VALUE
+A successfull return, this function will return the number of charcaters print (excluding the null byte).
+In case of errors it will return a negative value (-1).
 .SH EXAMPLE
-printf                produces
-(“%c”, H)            H
-(“%s”, “Hello!”)     Hello!
-(“%d”, 7)            7
+Printing a string:
+    #include "holberton.h"
+
+        _printf("%s\n","I'm a string");
+		return (0);
+
+Output: I'm a string
+
+Printing a single character:
+
+        #include "holberton.h"
+
+		_printf("%c\n", 'H');
+			return (0);
+
+Output: H
+Printing numbers:
+
+        #"holberton.h"
+
+                _printf("%d\n", 456789);
+			return (0);
+
+Output: 456789
 .SH SEE ALSO
-.I man 3 printf
+printf(1), printf(3), puts(3)
 .SH BUGS
 No known bugs.
 .SH AUTHOR(S)
