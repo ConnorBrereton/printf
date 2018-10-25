@@ -25,5 +25,6 @@ int print_number(va_list params);
 int _printf(const char *format, ...);
 int _putchar(char c);
 int getter(const char *format, va_list params, int i);
-
+int _strlen(char *s);
+int print_rev(va_list params);
 #endif

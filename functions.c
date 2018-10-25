@@ -91,3 +91,55 @@ int print_number(va_list params)
 	}
 	return (len);
 }
+
+/**
+ * _strlen - Returns length of string @s
+ *
+ * @s: pointer to string
+ *
+ * Return: len (success)
+ */
+
+int _strlen(char *s)
+{
+	int len = 0;
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		len++;
+	}
+
+	return (len);
+}
+
+/**
+ * print_rev - Uses specifier "r" to reverse a string
+ *
+ * @args: Points to parament in the argument list
+ *
+ * Return: The string in reverse
+ */
+
+int print_rev(va_list params)
+{
+        int i, len;
+
+	i = len = 0;
+
+	char *s;
+
+	s = va_arg(params, char *);
+
+        if (s)
+        {
+                for (len = _strlen(s) - 1; len >= 0; len--)
+                {
+                        _putchar(str[len]);
+                        i++;
+                }
+        }
+
+        return (i);
+
+}
