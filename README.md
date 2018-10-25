@@ -54,18 +54,19 @@ Include in header file
 ```
 _printf("A char inside a sentence: %c. Did it work?\n", 'F');
 
-output>  A char inside a sentence: F. Did it work?
+<output>  A char inside a sentence: F. Did it work?
 
 
 
 _printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
 
-output> Complete the sentence: You (nil) nothing, Jon Snow.
+<output> Complete the sentence: You (nil) nothing, Jon Snow.
 
 
 
 _printf("Negative:[%d]\n", -762534);
-output> Negative:[-762534]
+
+<output> Negative:[-762534]
 
 
 
@@ -73,11 +74,13 @@ len = _printf("Let's try to printf a simple sentence.\n");
 len2 = printf("Let's try to printf a simple sentence.\n");
 
 _printf("Length:[%d, %i]\n", len, len);
-output> Length:[39, 39]
+
+<output> Length:[39, 39]
 
 
 _printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
-output> Loading ... 99% Please wait
+
+<output> Loading ... 99% Please wait
 ```
 
 
