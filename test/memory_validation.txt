@@ -1,0 +1,18 @@
+0000000   L   e   t   '   s  sp   t   r   y  sp   t   o  sp   p   r   i
+0000020   n   t   f  sp   a  sp   s   i   m   p   l   e  sp   s   e   n
+0000040   t   e   n   c   e   .  nl   L   e   n   g   t   h   :   [   3
+0000060   9   ,  sp   3   9   ]  nl   N   e   g   a   t   i   v   e   :
+0000100   [   -   7   6   2   5   3   4   ]  nl   C   h   a   r   a   c
+0000120   t   e   r   :   [   H   ]  nl   S   t   r   i   n   g   :   [
+0000140   I  sp   a   m  sp   a  sp   s   t   r   i   n   g  sp   !   ]
+0000160  nl   P   e   r   c   e   n   t   :   [   %   ]  nl   L   e   n
+0000200   :   [   1   2   ]  nl   L   e   t   '   s  sp   t   r   y  sp
+0000220   t   o  sp   p   r   i   n   t   f  sp   a  sp   s   i   m   p
+0000240   l   e  sp   s   e   n   t   e   n   c   e   .  nl   L   e   n
+0000260   g   t   h   :   [   3   9   ,  sp   3   9   ]  nl   N   e   g
+0000300   a   t   i   v   e   :   [   -   7   6   2   5   3   4   ]  nl
+0000320   C   h   a   r   a   c   t   e   r   :   [   H   ]  nl   S   t
+0000340   r   i   n   g   :   [   I  sp   a   m  sp   a  sp   s   t   r
+0000360   i   n   g  sp   !   ]  nl   P   e   r   c   e   n   t   :   [
+0000400   %   ]  nl   L   e   n   :   [   1   2   ]  nl
+0000414
