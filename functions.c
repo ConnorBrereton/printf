@@ -18,7 +18,7 @@ int print_char(va_list params)
 
 	c = va_arg(params, int);
 	_putchar(c);
-	return (0);
+	return (1);
 }
 
 /**
@@ -38,7 +38,7 @@ int print_string(va_list params)
 	s = va_arg(params, char *);
 
 	if (s == NULL)
-		s = "(null)";
+		s = "(nil)";
 
 	for (len = 0; s[len] != '\0'; len++)
 		_putchar(s[len]);
