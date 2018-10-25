@@ -1,5 +1,5 @@
 ## :arrows_counterclockwise: :wrench: printf()
-![Holberton School Logo](/ConnorBrereton/printf/tree/master/holberton-logo-twitter-card.png?raw=true "Logo")
+![Logo](https://raw.github.com/ConnorBrereton/printf/master/images)
 
 ## Syntax
 printf(formatter, stream...);
