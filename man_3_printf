@@ -6,6 +6,8 @@
 .SH DESCRIPTION
 .B _printf
 It is a function that prints ARGUMENT(s) according to FORMAT
+.B RETURN VALUE
+The function _printf() returns the number of bytes written to the ouput stream (success) and -1 on (failure)
 FORMAT characters:
 .IP c
 Prints a single character
