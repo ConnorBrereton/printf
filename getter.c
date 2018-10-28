@@ -26,8 +26,6 @@ int getter(const char *format, va_list params, int j)
 		{'d', print_number},
 		{'i', print_number},
 		{'%', print_char},
-		{'b', print_binary},
-		{'o', print_octal},
 		{'\0', NULL}
 	};
 	int i, len;

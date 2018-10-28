@@ -38,7 +38,7 @@ int print_string(va_list params)
 	s = va_arg(params, char *);
 
 	if (s == NULL)
-		s = "(nil)";
+		s = "(null)";
 
 	for (len = 0; s[len] != '\0'; len++)
 		_putchar(s[len]);
